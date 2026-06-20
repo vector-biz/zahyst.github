@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адвокат та Юрист | Професійна юридична допомога</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+       <!-- Шапка сайту -->
+    <header>
+        <div class="container">
+            <div class="logo">Закон для кожного. <span>Захист для всіх.</span></div>
+            <nav id="nav-menu">
+                <a href="#about">Про мене</a>
+                <a href="#services">Послуги</a>
+                <a href="#contacts">Контакти</a>
+            </nav>
+            <button class="hamburger" id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Головний екран -->
+    <section class="hero">
+        <h1><span>Юридичний захист</span></h1>
+        <p>Надійне вирішення складних правових питань, судових спорів та індивідуальні консультації від Юрія з понад 24-річним досвідом.</p>
+        <button class="btn">Отримати консультацію</button>
+    </section>
+
+    <!-- Блок про мене -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Про <span>мене</span></h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Вітаю! Мене звати Юрій, я юрист з понад 24-річним досвідом роботи у різних галузях права. Моя мета - надати якісну та доступну юридичну допомогу кожному, хто в ній потребує.</p>
+                    <p>Шукаєте вихід із заплутаного правового спору? За моїми плечима 24 роки успішного вирішення юридичних питань будь-якої складності. Я забезпечую індивідуальний підхід, повну конфіденційність та чіткий алгоритм дій для захисту ваших інтересів, бізнесу чи родини.</p>
+                </div>
+                <div class="about-image">
+                    <div class="about-photo"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок послуг -->
+    <section id="services" class="services">
+        <h2>Наші <span>послуги</span></h2>
+        <div class="services-grid">
+            
+            <!-- Карточка 1 -->
+            <div class="service-card">
+                <div class="service-img img-civil"></div>
+                <div class="service-content">
+                    <h3>Цивільні та сімейні спори</h3>
+                    <p>Розлучення, поділ майна, стягнення аліментів та захист ваших інтересів у судах загальної юрисдикції.</p>
+                </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="service-card">
+                <div class="service-img img-business"></div>
+                <div class="service-content">
+                    <h3>Захист бізнесу</h3>
+                    <p>Господарське право, абонентське обслуговування компаній, складання договорів та супровід перевірок.</p>
+                </div>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="service-card">
+                <div class="service-img img-property"></div>
+                <div class="service-content">
+                    <h3>Нерухомість та земля</h3>
+                    <p>Юридичний аналіз угод купівлі-продажу, вирішення земельних спорів та приватизація об'єктів.</p>
+                </div>
+            </div>
+
+            <!-- Карточка 4 -->
+            <div class="service-card">
+                <div class="service-img img-inheritance"></div>
+                <div class="service-content">
+                    <h3>Спадкове право</h3>
+                    <p>Оформлення спадку, вирішення спорів між спадкоємцями, захист прав на спадкове майно.</p>
+                </div>
+            </div>
+
+            <!-- Карточка 5 -->
+            <div class="service-card">
+                <div class="service-img img-pension"></div>
+                <div class="service-content">
+                    <h3>Пенсійне право</h3>
+                    <p>Допомога в оформленні пенсії, оскарження відмов Пенсійного фонду, захист пенсійних прав.</p>
+                </div>
+            </div>
+
+            <!-- Карточка 6 -->
+            <div class="service-card">
+                <div class="service-img img-administrative"></div>
+                <div class="service-content">
+                    <h3>Адміністративне право</h3>
+                    <p>Захист у адміністративних справах, оскарження штрафів та рішень державних органів.</p>
+                </div>
+            </div>
+
+            <!-- Карточка 7 -->
+            <div class="service-card">
+                <div class="service-img img-labor"></div>
+                <div class="service-content">
+                    <h3>Трудове право</h3>
+                    <p>Вирішення спорів з роботодавцем, захист прав працівників, складання та аналіз трудових договорів.</p>
+                </div>
+            </div>
+
+            <!-- Карточка 8 -->
+            <div class="service-card">
+                <div class="service-img img-enforcement"></div>
+                <div class="service-content">
+                    <h3>Захист прав у виконавчих службах</h3>
+                    <p>Допомога у виконавчих провадженнях, захист від незаконних дій виконавців, стягнення заборгованостей.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Блок контактів -->
+    <section id="contacts" class="contacts">
+        <div class="contacts-container">
+            <h2>Зворотний <span>зв'язок</span></h2>
+            <p class="contacts-subtitle">Залиште заявку, і ми зв'яжемося з вами найближчим часом для детальної консультації</p>
+            
+            <div class="contacts-wrapper">
+                <!-- Форма -->
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Дякуємо! Заявка успішно відправлена.');">
+                    <input type="text" placeholder="Ваше ім'я" required>
+                    <input type="tel" placeholder="Номер телефону" required>
+                    <textarea placeholder="Коротко опишіть вашу проблему" rows="5" required></textarea>
+                    <button type="submit" class="btn">Надіслати запит</button>
+                </form>
+
+                <!-- Інфо -->
+                <div class="contact-info">
+                    <div class="info-item">
+                        <h3>📍 Адреса офісу</h3>
+                        <p>м. Київ, вул. Хрещатик, 12, офіс 401</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>📞 Телефони</h3>
+                        <p><a href="tel:+38099*******">+38 (099) ***-**-**</a></p>
+                        <p><a href="tel:+38067*******">+38 (067) ***-**-**</a></p>
+                    </div>
+                    <div class="info-item">
+                        <h3>✉️ Електронна пошта</h3>
+                        <p><a href="mailto:info@lawyer.ua">info@lawyer.ua</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Підвал (Footer) -->
+    <footer>
+        <p>&copy; 2026 Юридична Допомога. Всі права захищені.</p>
+    </footer>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        const navLinks = document.querySelectorAll('#nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
