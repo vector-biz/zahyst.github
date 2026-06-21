@@ -1,46 +1,54 @@
 
-const contactForm = document.getElementById('contact-form');
-const formStatus = document.getElementById('form-status');
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
 
-if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        const formData = new FormData(contactForm);
-        
-        try {
-            const response = await fetch(contactForm.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-            
-            if (response.ok) {
-                contactForm.reset();
-            }
-        } catch (error) {
-            console.error('Error submitting form:', error);
-        }
-    });
-}
+  if (!form || !status) return;
 
-// Keep hamburger menu functionality too
-const hamburgerBtn = document.getElementById('hamburger-btn');
-const navMenu = document.getElementById('nav-menu');
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
 
-if (hamburgerBtn && navMenu) {
+    status.textContent = 'Відправляємо повідомлення…';
+    status.className = 'form-status visible';
+    status.classList.remove('success', 'error');
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+        throw new Error(data?.error || 'Помилка відправки. Спробуйте ще раз.');
+      }
+
+      form.reset();
+      status.textContent = 'Повідомлення надіслано. Дякуємо!';
+      status.classList.add('success');
+    } catch (error) {
+      status.textContent = error.message || 'Не вдалося надіслати повідомлення.';
+      status.classList.add('error');
+    }
+  });
+
+  // Keep hamburger menu working
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const navMenu = document.getElementById('nav-menu');
+
+  if (hamburgerBtn && navMenu) {
     hamburgerBtn.addEventListener('click', () => {
-        hamburgerBtn.classList.toggle('active');
-        navMenu.classList.toggle('active');
+      hamburgerBtn.classList.toggle('active');
+      navMenu.classList.toggle('active');
     });
 
     const navLinks = document.querySelectorAll('#nav-menu a');
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            hamburgerBtn.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
+      link.addEventListener('click', () => {
+        hamburgerBtn.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
     });
-}
+  }
+});
