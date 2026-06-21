@@ -3,6 +3,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle form submission - NO REDIRECT!
   const form = document.getElementById('contact-form');
   const statusDiv = document.getElementById('form-status');
+  const phoneInput = document.getElementById('phone');
+
+  // Custom validation for Ukrainian phone
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function() {
+      const validPattern = /^(\+380|0)\d{9}$/;
+      if (!validPattern.test(this.value)) {
+        this.setCustomValidity('Будь ласка, введіть український номер телефону: +380 XX XXX XX XX або 0XXXXXXXXX');
+      } else {
+        this.setCustomValidity('');
+      }
+    });
+  }
 
   if (form && statusDiv) {
     form.addEventListener('submit', async function(e) {
