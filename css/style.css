@@ -377,7 +377,7 @@ nav a:hover {
 .info-item h3 {
     font-size: 20px;
     margin-bottom: 10px;
-    color: #fff;
+    color: #e50914;
 }
 
 .info-item p {
@@ -387,7 +387,7 @@ nav a:hover {
 }
 
 .info-item a {
-    color: #e50914;
+    color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
     font-size: 22px;
