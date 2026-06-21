@@ -398,6 +398,17 @@ nav a:hover {
     color: #ff4d55;
 }
 
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.social-icon {
+    font-size: 26px;
+}
+
 /* Подвал */
 footer {
     background-color: #121318;
