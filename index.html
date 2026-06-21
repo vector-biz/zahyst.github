@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Професійна юридична допомога від Юрія з понад 24-річним досвідом. Розлучення, поділ майна, захист бізнесу, нерухомість та інші послуги.">
     <title>Юрист | Професійна юридична допомога</title>
     <link rel="icon" href="images/femida-icon.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
@@ -135,9 +136,12 @@
             <div class="contacts-wrapper">
                 <!-- Форма -->
                 <form class="contact-form" onsubmit="event.preventDefault(); alert('Дякуємо! Заявка успішно відправлена.');">
-                    <input type="text" placeholder="Ваше ім'я" required>
-                    <input type="tel" placeholder="Номер телефону" required>
-                    <textarea placeholder="Коротко опишіть вашу проблему" rows="5" required></textarea>
+                    <label for="name" class="visually-hidden">Ваше ім'я</label>
+                    <input type="text" id="name" name="name" placeholder="Ваше ім'я" required>
+                    <label for="phone" class="visually-hidden">Номер телефону</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Номер телефону" required>
+                    <label for="message" class="visually-hidden">Коротко опишіть вашу проблему</label>
+                    <textarea id="message" name="message" placeholder="Коротко опишіть вашу проблему" rows="5" required></textarea>
                     <button type="submit" class="btn">Надіслати запит</button>
                 </form>
 

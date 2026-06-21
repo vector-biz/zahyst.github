@@ -6,6 +6,18 @@
     font-family: 'Segoe UI', Arial, sans-serif;
 }
 
+/* Клас для приховування елементів, але залишення їх доступними для скрін-рідерів */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
 body {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%),
                 url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&h=1080&fit=crop');
