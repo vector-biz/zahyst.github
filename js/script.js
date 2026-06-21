@@ -1,18 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Formspree official code from their docs
-  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-  formspree('initForm', {
-    formElement: document.getElementById('contact-form'),
-    formId: 'meebjkwg',
-    onSuccess: () => {
-      const status = document.getElementById('form-status');
-      status.textContent = 'Повідомлення надіслано. Дякуємо!';
-      status.className = 'form-status visible success';
-    }
-  });
-
-  // Keep hamburger menu working
+  // Only handle hamburger menu
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const navMenu = document.getElementById('nav-menu');
 

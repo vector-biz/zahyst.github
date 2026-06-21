@@ -139,22 +139,17 @@
             <div class="contacts-wrapper">
                 <!-- Форма -->
                 <div class="form-container">
-                    <div data-fs-success id="form-status" class="form-status" role="status" aria-live="polite"></div>
-                    <div data-fs-error class="form-status" role="status" aria-live="polite"></div>
-                    <form class="contact-form" id="contact-form">
+                    <form class="contact-form" action="https://formspree.io/f/meebjkwg" method="POST">
+                        <input type="hidden" name="_next" value="https://zahyst.pp.ua">
                         <label for="name" class="visually-hidden">Ваше ім'я</label>
-                        <input type="text" id="name" name="name" placeholder="Ваше ім'я" data-fs-field required>
-                        <span data-fs-error="name"></span>
+                        <input type="text" id="name" name="name" placeholder="Ваше ім'я" required>
                         <label for="email" class="visually-hidden">Ваша пошта</label>
-                        <input type="email" id="email" name="email" placeholder="Ваша пошта" data-fs-field required>
-                        <span data-fs-error="email"></span>
+                        <input type="email" id="email" name="email" placeholder="Ваша пошта" required>
                         <label for="phone" class="visually-hidden">Номер телефону</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Номер телефону" data-fs-field required>
-                        <span data-fs-error="phone"></span>
+                        <input type="tel" id="phone" name="phone" placeholder="Номер телефону" required>
                         <label for="message" class="visually-hidden">Коротко опишіть вашу проблему</label>
-                        <textarea id="message" name="message" placeholder="Коротко опишіть вашу проблему" rows="5" data-fs-field required></textarea>
-                        <span data-fs-error="message"></span>
-                        <button type="submit" class="btn" data-fs-submit-btn>Надіслати запит</button>
+                        <textarea id="message" name="message" placeholder="Коротко опишіть вашу проблему" rows="5" required></textarea>
+                        <button type="submit" class="btn">Надіслати запит</button>
                     </form>
                 </div>
 
@@ -179,7 +174,6 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
