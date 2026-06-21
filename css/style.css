@@ -357,18 +357,21 @@ nav a:hover {
 }
 
 .info-item p {
-    color: #c5c6c7;
-    font-size: 16px;
+    color: #f5f5f5;
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .info-item a {
     color: #e50914;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .info-item a:hover {
-    color: #fff;
+    color: #ff4d55;
 }
 
 /* Подвал */
