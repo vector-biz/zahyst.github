@@ -135,7 +135,8 @@
             
             <div class="contacts-wrapper">
                 <!-- Форма -->
-                <form class="contact-form" id="contact-form">
+                <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+                <form class="contact-form" id="contact-form" action="https://formspree.io/f/meebjkwg" method="POST" accept-charset="UTF-8">
                     <label for="name" class="visually-hidden">Ваше ім'я</label>
                     <input type="text" id="name" name="name" placeholder="Ваше ім'я" required>
                     <label for="email" class="visually-hidden">Ваша пошта</label>
@@ -167,44 +168,7 @@
         <p>&copy; 2026 Юридична Допомога. Всі права захищені.</p>
     </footer>
 
-    <script>
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const navMenu = document.getElementById('nav-menu');
-
-        hamburgerBtn.addEventListener('click', () => {
-            hamburgerBtn.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        const navLinks = document.querySelectorAll('#nav-menu a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburgerBtn.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-
-        // Custom Formspree AJAX submission - NO REDIRECTS EVER!
-        const contactForm = document.getElementById('contact-form');
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault(); // Stop normal form submission (which causes redirect)
-            const formData = new FormData(contactForm);
-            
-            try {
-                await fetch('https://formspree.io/f/meebjkwg', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                // Clear form fields if you want, optional
-                contactForm.reset();
-            } catch (error) {
-                console.error('Form submission error:', error);
-            }
-        });
-    </script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>
