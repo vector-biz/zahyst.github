@@ -77,26 +77,6 @@ nav a:hover {
     color: #e50914;
 }
 
-.header-contacts {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-.header-phone,
-.header-email {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    transition: color 0.3s ease;
-}
-
-.header-phone:hover,
-.header-email:hover {
-    color: #e50914;
-}
-
 /* Гамбургер меню */
 .hamburger {
     display: none;
@@ -456,10 +436,6 @@ footer p {
     nav a {
         margin: 0;
         font-size: 16px;
-    }
-    
-    .header-contacts {
-        display: none;
     }
     
     .hero h1 {
