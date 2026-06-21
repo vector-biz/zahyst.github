@@ -135,9 +135,15 @@
             
             <div class="contacts-wrapper">
                 <!-- Форма -->
-                <form class="contact-form" action="https://formspree.io/f/movqnyke" method="POST">
+                <div class="form-messages">
+                    <div class="form-success" id="form-success">Дякуємо! Заявка успішно відправлена.</div>
+                    <div class="form-error" id="form-error">Виникла помилка, спробуйте ще раз.</div>
+                </div>
+                <form class="contact-form" id="contact-form" action="https://formspree.io/f/meebjkwg" method="POST">
                     <label for="name" class="visually-hidden">Ваше ім'я</label>
                     <input type="text" id="name" name="name" placeholder="Ваше ім'я" required>
+                    <label for="email" class="visually-hidden">Ваша пошта</label>
+                    <input type="email" id="email" name="email" placeholder="Ваша пошта" required>
                     <label for="phone" class="visually-hidden">Номер телефону</label>
                     <input type="tel" id="phone" name="phone" placeholder="Номер телефону" required>
                     <label for="message" class="visually-hidden">Коротко опишіть вашу проблему</label>
@@ -181,7 +187,23 @@
                 navMenu.classList.remove('active');
             });
         });
+
+        // Formspree AJAX submission
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { 
+            formElement: '#contact-form', 
+            formId: 'meebjkwg',
+            onSuccess: () => {
+                document.getElementById('form-success').style.display = 'block';
+                document.getElementById('form-error').style.display = 'none';
+            },
+            onError: () => {
+                document.getElementById('form-success').style.display = 'none';
+                document.getElementById('form-error').style.display = 'block';
+            }
+        });
     </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
