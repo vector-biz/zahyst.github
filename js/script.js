@@ -5,8 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const statusDiv = document.getElementById('form-status');
   const phoneInput = document.getElementById('phone');
 
-  // Custom validation for Ukrainian phone
+  // Auto-fill +380 prefix on focus
   if (phoneInput) {
+    phoneInput.addEventListener('focus', function() {
+      if (!this.value || this.value === '') {
+        this.value = '+380';
+      }
+    });
+
+    // Custom validation for Ukrainian phone
     phoneInput.addEventListener('input', function() {
       const validPattern = /^(\+380|0)\d{9}$/;
       if (!validPattern.test(this.value)) {
