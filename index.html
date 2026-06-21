@@ -135,7 +135,7 @@
             
             <div class="contacts-wrapper">
                 <!-- Форма -->
-                <form class="contact-form" id="contact-form" action="https://formspree.io/f/meebjkwg" method="POST">
+                <form class="contact-form" id="contact-form">
                     <label for="name" class="visually-hidden">Ваше ім'я</label>
                     <input type="text" id="name" name="name" placeholder="Ваше ім'я" required>
                     <label for="email" class="visually-hidden">Ваша пошта</label>
@@ -144,7 +144,7 @@
                     <input type="tel" id="phone" name="phone" placeholder="Номер телефону" required>
                     <label for="message" class="visually-hidden">Коротко опишіть вашу проблему</label>
                     <textarea id="message" name="message" placeholder="Коротко опишіть вашу проблему" rows="5" required></textarea>
-                    <button type="submit" class="btn" data-fs-submit-btn>Надіслати запит</button>
+                    <button type="submit" class="btn">Надіслати запит</button>
                 </form>
 
                 <!-- Інфо -->
@@ -184,14 +184,27 @@
             });
         });
 
-        // Quiet Formspree AJAX submission
-        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-        formspree('initForm', { 
-            formElement: '#contact-form', 
-            formId: 'meebjkwg'
+        // Custom Formspree AJAX submission - NO REDIRECTS EVER!
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Stop normal form submission (which causes redirect)
+            const formData = new FormData(contactForm);
+            
+            try {
+                await fetch('https://formspree.io/f/meebjkwg', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                // Clear form fields if you want, optional
+                contactForm.reset();
+            } catch (error) {
+                console.error('Form submission error:', error);
+            }
         });
     </script>
-    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
