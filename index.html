@@ -6,7 +6,7 @@
     <meta name="description" content="Професійна юридична допомога від Юрія з понад 24-річним досвідом. Розлучення, поділ майна, захист бізнесу, нерухомості та інші послуги.">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self'; img-src 'self' https://images.unsplash.com; font-src 'self'; frame-ancestors 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://images.unsplash.com; font-src 'self'; connect-src 'self' https://formspree.io; frame-ancestors 'none';">
     <title>Юрист | Професійна юридична допомога</title>
     <link rel="icon" href="images/femida-icon.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
@@ -139,8 +139,8 @@
             <div class="contacts-wrapper">
                 <!-- Форма -->
                 <div class="form-container">
-                    <form class="contact-form" action="https://formspree.io/f/meebjkwg" method="POST">
-                        <input type="hidden" name="_next" value="https://zahyst.pp.ua">
+                    <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+                    <form class="contact-form" id="contact-form">
                         <label for="name" class="visually-hidden">Ваше ім'я</label>
                         <input type="text" id="name" name="name" placeholder="Ваше ім'я" required>
                         <label for="email" class="visually-hidden">Ваша пошта</label>
