@@ -13,10 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Custom validation for Ukrainian phone
-    phoneInput.addEventListener('input', function() {
+    phoneInput.addEventListener('blur', function() {
       const validPattern = /^(\+380|0)\d{9}$/;
-      if (!validPattern.test(this.value)) {
+      if (!this.value || this.value === '+380') {
+        this.setCustomValidity('');
+      } else if (!validPattern.test(this.value)) {
         this.setCustomValidity('Будь ласка, введіть український номер телефону: +380 XX XXX XX XX або 0XXXXXXXXX');
       } else {
         this.setCustomValidity('');
@@ -60,17 +61,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const navMenu = document.getElementById('nav-menu');
 
   if (hamburgerBtn && navMenu) {
+    const setMenuOpen = (open) => {
+      hamburgerBtn.classList.toggle('active', open);
+      navMenu.classList.toggle('active', open);
+      hamburgerBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+
     hamburgerBtn.addEventListener('click', () => {
-      hamburgerBtn.classList.toggle('active');
-      navMenu.classList.toggle('active');
+      setMenuOpen(!navMenu.classList.contains('active'));
     });
 
-    const navLinks = document.querySelectorAll('#nav-menu a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        hamburgerBtn.classList.remove('active');
-        navMenu.classList.remove('active');
-      });
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', () => setMenuOpen(false));
     });
   }
 });

@@ -9,19 +9,32 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://images.unsplash.com; font-src 'self'; connect-src 'self' https://formspree.io; frame-ancestors 'none';">
     <title>Юрист | Професійна юридична допомога</title>
     <link rel="icon" href="images/femida-icon.png" type="image/png">
+    <link rel="icon" href="images/femida-icon.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="images/femida-icon.png" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="images/femida-icon.png">
+    <meta property="og:title" content="Юрист | Професійна юридична допомога">
+    <meta property="og:description" content="Професійна юридична допомога від Юрія з понад 24-річним досвідом.">
+    <meta property="og:image" content="https://zahyst.pp.ua/images/femida-icon.png">
+    <meta property="og:url" content="https://zahyst.pp.ua">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://zahyst.pp.ua/images/femida-icon.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
        <!-- Шапка сайту -->
     <header>
         <div class="container">
-            <div class="logo">Закон для кожного. <span>Захист для всіх.</span></div>
+            <div class="logo">
+                <img src="images/femida-icon.png" alt="Феміда" class="logo-icon">
+                Закон для кожного. <span>Захист для всіх.</span>
+            </div>
             <nav id="nav-menu">
                 <a href="#about">Про мене</a>
                 <a href="#services">Послуги</a>
                 <a href="#contacts">Контакти</a>
             </nav>
-            <button class="hamburger" id="hamburger-btn">
+            <button class="hamburger" id="hamburger-btn" type="button" aria-label="Меню" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -43,7 +56,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>Вітаю! Мене звати Юрій, я юрист з понад 24-річним досвідом роботи у різних галузях права. Моя мета - надати якісну та доступну юридичну допомогу кожному, хто її потребує.</p>
-                    <p>Шукаєте вихід із заплутаного правового спору? За моїми понад 24 роки успішного вирішення юридичних питань будь-якої складності. Я забезпечую індивідуальний підхід, повну конфіденційність та чіткий алгоритм дій для захисту ваших інтересів, бізнесу чи родини.</p>
+                    <p>Шукаєте вихід із заплутаного правового спору? Протягом понад 24 років я успішно вирішую юридичні питання будь-якої складності. Забезпечую індивідуальний підхід, повну конфіденційність та чіткий алгоритм дій для захисту ваших інтересів, бізнесу чи родини.</p>
                 </div>
                 <div class="about-image">
                     <div class="about-photo"></div>
@@ -54,7 +67,7 @@
 
     <!-- Блок послуг -->
     <section id="services" class="services">
-        <h2>Наші <span>послуги</span></h2>
+        <h2>Мої <span>послуги</span></h2>
         <div class="services-grid">
             
             <!-- Карточка 1 -->
@@ -134,13 +147,13 @@
     <section id="contacts" class="contacts">
         <div class="contacts-container">
             <h2>Зворотний <span>зв'язок</span></h2>
-            <p class="contacts-subtitle">Залиште заявку, і ми зв'яжемося з вами найближчим часом для детальної консультації</p>
+            <p class="contacts-subtitle">Залиште заявку, і я зв'яжуся з вами найближчим часом для детальної консультації</p>
             
             <div class="contacts-wrapper">
                 <!-- Форма -->
                 <div class="form-container">
                     <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
-                    <form class="contact-form" id="contact-form">
+                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/meebjkwg" method="POST">
                         <label for="name" class="visually-hidden">Ваше ім'я</label>
                         <input type="text" id="name" name="name" placeholder="Ваше ім'я" required>
                         <label for="email" class="visually-hidden">Ваша пошта</label>

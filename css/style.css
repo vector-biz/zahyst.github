@@ -53,6 +53,14 @@ header {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    height: 40px;
+    width: 40px;
 }
 
 .logo span {
@@ -155,6 +163,8 @@ nav a:hover {
     border-radius: 4px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn:hover {
@@ -201,7 +211,7 @@ nav a:hover {
 
 .about-image .about-photo {
     height: 500px;
-    background-image: url('../images/yuriy-photo.png');
+    background-image: url('../images/yuriy-photo.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 8px;
